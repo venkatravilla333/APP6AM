@@ -1,12 +1,11 @@
 import React, { useState } from 'react'
-import Parent from './Conditional-rendering/Parent'
-// import A from './State/Global-State/Redux-Concept/React-Components/A'
+import MapLoop from './Map-Method/MapLoop'
 
 function App() {
  
   return (
     <div>
-     <Parent/>
+      <MapLoop/>
     </div>
   )
 }
