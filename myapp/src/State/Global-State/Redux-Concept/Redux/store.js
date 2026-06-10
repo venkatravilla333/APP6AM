@@ -1,24 +1,15 @@
 
-import { createStore } from 'redux'
+import { applyMiddleware, combineReducers, createStore } from 'redux'
+import { cakeReducer } from './cake/cakeReducer'
+import { curdReducer } from './curd/curdReducer'
+
+import logger from 'redux-logger'
 
 
-var initilaState = {
-  noOfCakes: 100
-}
+let rootReducer = combineReducers({
+  cake: cakeReducer,
+  curd: curdReducer
+})
 
-let cakeReducer = (state = initilaState, action) => {
-  console.log(action)
-  switch (action.type) {
-    case 'BUY_CAKE':
-      return {
-        noOfCakes: state.noOfCakes - 1
-      }
-      break;
-    default: 
-      return state
-  }
-  return initilaState
-}
 
-export let store = createStore(cakeReducer)
-console.log(store)
+export let store = createStore(rootReducer, applyMiddleware(logger))

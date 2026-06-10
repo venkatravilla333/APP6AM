@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import MapLoop from './Map-Method/MapLoop'
+import A from './State/Global-State/Redux-Concept/React-Components/A'
 
 function App() {
  
   return (
     <div>
-      <MapLoop/>
+      <A/>
     </div>
   )
 }
